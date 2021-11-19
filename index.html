@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+}
+
+#head{
+    font-size: 3rem;
+    /* background-color: aqua; */
+    text-align: center;
+    border: 1px solid rebeccapurple;
+ 
+}
+
+.container{
+    border: 2px solid pink;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 70vh;
+
+}
+.continer ul li div span {
+    text-decoration: none;
+}
+
+
+.weight{
+    text-decoration: none;
+    border: 1px solid black;
+    /* font-size: 30px; */ 
+    display: block;
+    margin:3vh 5vh;
+
+
+}
+
+.height{
+    border: 1px solid rgb(27, 247, 7);
+    /* font-size: 30px; */
+
+display: block;
+margin: 3vh 5vh;
+}
+
+#kilograms,#meters{
+    width: 10vw;
+    height: 4vh;
+    margin:1vh 5vh;
+}
+
+#find{
+width: 8vw;
+height: 5vh;
+margin:3vh 8vh;
+}
+#clear{
+width: 8vw;
+height: 5vh;
+margin:3vh 5vh;
+}
+
+</style>
+<body>
+    <div id="head">Calculate the BMI</div>
+    <div class="container">
+        <ul>
+            <li>
+                <div>
+                    <span class="weight"> Weight
+                        <input type="text" id="kilograms">
+                    </span>
+                    <span class="height"> Height
+                        <input type="text" id="meters">
+                    </span>
+                </div>
+            </li>
+            <li> <button id="find">Find</button>
+                <button id="clear">Clear</button>
+            </li>
+            <li>
+                <div class="BMI"> BMI Index
+                    <input type="text" id="BMI">
+            </li>
+    </div>
+    </ul>
+    </div>
+
+
+
+
+</body>
+<!-- <script src="index.js"></script> -->
+<script> 
+console.log("Calculate the Body MAss index");
+alert("please enter the weight in kilograms and height in meter");
+
+
+const kilograms = document.getElementById("kilograms");
+const meters = document.getElementById("meters");
+const BMI = document.getElementById("BMI");
+
+let find = document.getElementById("find");
+find.addEventListener("click", function (e) {
+
+    let weight = kilograms.value;
+    let height = meters.value;
+
+    if (weight == "" && height == "") {
+        alert("Fill the both weight and height section")
+    }
+    else if (weight == "" || height == "") {
+        alert("Fill the both weight and height section")
+    }
+else{
+let a = weight/(height*height);
+console.log("your body mass index is " + a);
+BMI.value = a;
+
+}
+
+
+
+})
+
+let clear = document.getElementById('clear');
+clear.addEventListener("click", function (e) {
+    kilograms.value = "";
+    meters.value = "";
+    BMI.value = "";
+
+});
+
+
+</script>
+</html>
